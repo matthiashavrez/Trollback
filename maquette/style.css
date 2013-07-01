@@ -55,8 +55,8 @@ div.header>div.compte a.register{text-indent:-9999px;display:block;width:125px;h
 /* -----------------------------------*/
 /* -------- BLOCS PRINCIPAUX ---------*/
 /* -----------------------------------*/
-div.page{position:relative;}
-div.page>div.contentLeft{margin:50px 150px;}
+div.page{position:relative;padding:50px;}
+div.page>div.contentLeft{width:1500px;}
 div.page>div.contentLeft>div.bloc{float:left;margin:0 35px 35px 0;height:258px;}
 div.page>div.contentLeft>div.bloc>div.titre{width:100%;display:block;height:30px;background:url(images/fdTitre.png) 10px top no-repeat #181818;}
 div.page>div.contentLeft>div.bloc>div.titre>h1{color:#fff;text-transform:uppercase;padding:8px 0 0 40px;}
@@ -84,7 +84,8 @@ div.page>div.contentLeft>div.bloc_news>div.texte>div.listeNews>ul>li.last{backgr
 div.page>div.contentLeft>div.bloc_news>div.texte>div.listeNews>ul>li.last:hover{background-color:#181818;cursor:pointer;}
 
 /* Lecteur */
-div.page>div.contentLeft>div.bloc_news>div.texte>div.lecteurNews{float:left;width: 368px;margin-left: 10px;}
+div.page>div.contentLeft>div.bloc_news>div.texte>div.lecteurNews{float:left;width: 368px;margin-left: 10px;display:none;}
+div.page>div.contentLeft>div.bloc_news>div.texte>div.lecteurNews.active{display:block;}
 div.page>div.contentLeft>div.bloc_news>div.texte>div.lecteurNews>div.date{margin:5px 0 15px 0;}
 div.page>div.contentLeft>div.bloc_news>div.texte>div.lecteurNews>div.date>p{font-size:11px;}
 div.page>div.contentLeft>div.bloc_news>div.texte>div.lecteurNews>div.texte{}
@@ -116,7 +117,8 @@ div.page>div.contentLeft>div.bloc_events>div.texte>div.listeEvents>ul>li.last{ba
 div.page>div.contentLeft>div.bloc_events>div.texte>div.listeEvents>ul>li.last:hover{background-color:#181818;cursor:pointer;}
 
 /* Lecteur */
-div.page>div.contentLeft>div.bloc_events>div.texte>div.lecteurEvents{float:left;width: 368px;margin-left: 10px;}
+div.page>div.contentLeft>div.bloc_events>div.texte>div.lecteurEvents{float:left;width: 368px;margin-left: 10px;display:none;}
+div.page>div.contentLeft>div.bloc_events>div.texte>div.lecteurEvents.active{display:block;}
 div.page>div.contentLeft>div.bloc_events>div.texte>div.lecteurEvents>div.date{margin:5px 0 15px 0;}
 div.page>div.contentLeft>div.bloc_events>div.texte>div.lecteurEvents>div.date>p{font-size:11px;}
 div.page>div.contentLeft>div.bloc_events>div.texte>div.lecteurEvents>div.texte{}
@@ -129,22 +131,51 @@ div.page>div.contentLeft>div.bloc_events>div.texte>div.lecteurEvents>div.enSavoi
 div.page>div.contentLeft>div.bloc_events>div.texte>div.lecteurEvents>div.enSavoirPlus>a:hover{background-color:#181818;}
 
 
-div.page>div.contentRight{position:absolute;right:0px;top:-50px;}
+div.page>div.contentRight{position:absolute;right:0;top:0;width:490px;}
+div.page>div.contentRight>div.colonneSelection{float:left;width:90px;}
 div.page>div.contentRight>div.colonneSelection>div.item{border:2px solid #272727;opacity:0.6;width:90px;}
 div.page>div.contentRight>div.colonneSelection>div.item:hover{opacity:1;cursor:pointer;}
 div.page>div.contentRight>div.colonneSelection>div.item.active{opacity:1;border:2px solid #111;}
 
+div.page>div.contentRight>div.colonneProjet{float:left;display:none;width:396px;margin-left:4px;}
+div.page>div.contentRight>div.colonneProjet.active{display:block;overflow:hidden;}
+div.page>div.contentRight>div.colonneProjet>div.titreProjet{width:300px;margin:20px 0 0 50px;background-color:#3b1f00;opacity:0.7;}
+div.page>div.contentRight>div.colonneProjet>div.titreProjet>h1{color:#fff;text-transform:uppercase;text-align:center;line-height:35px;font-size:20px;padding:15px;}
+div.page>div.contentRight>div.colonneProjet>div.bloc_informations{padding:15px;width:270px;background-color:#3b1f00;opacity:0.7;margin:20px 0 0 50px;}
+div.page>div.contentRight>div.colonneProjet>div.bloc_informations>p{font-size:14px;line-height:18px;}
 
-
-
-
-
-
+div.page>div.contentRight>div.colonneProjet.trollcraft{background: url(images/trollcraft/fond.jpg) left top no-repeat transparent;}
+div.page>div.contentRight>div.colonneProjet.skyrim{background: url(images/skyrim/fond.jpg) left top no-repeat transparent;}
+div.page>div.contentRight>div.colonneProjet.trackmania{background: url(images/trackmania/fond.jpg) left top no-repeat transparent;}
 
 /* -----------------------------------*/
 /* -------- MEDIAQUERIES -------------*/
 /* -----------------------------------*/
 
+@media (min-width:1820px){
+	div.page>div.contentLeft{width:1500px;}
+}
+@media (min-width:1525px) and (max-width:1819px){
+	div.page>div.contentLeft{width:1000px;}
+}
+@media (min-width:1279px) and (max-width:1524px){
+	div.page{padding:50px 20px;}
+	div.page>div.contentLeft{width:1000px;}
+
+	div.page>div.contentRight{width:290px;}
+	div.page>div.contentRight>div.colonneProjet{width:196px;}
+	div.page>div.contentRight>div.colonneProjet>div.titreProjet{width:168px;margin:20px 0 0 14px;}
+	div.page>div.contentRight>div.colonneProjet>div.bloc_informations{width:138px;margin:20px 0 0 14px;}
+}
+@media (min-width:1023px) and (max-width:1278px){
+	div.page{padding:50px 20px;}
+	div.page>div.contentLeft{width:1000px;}
+	div.page>div.contentLeft>div.bloc{margin:0 10px 10px 0;}
+	div.page>div.contentRight{width:290px;}
+	div.page>div.contentRight>div.colonneProjet{width:196px;}
+	div.page>div.contentRight>div.colonneProjet>div.titreProjet{width:168px;margin:20px 0 0 14px;}
+	div.page>div.contentRight>div.colonneProjet>div.bloc_informations{width:138px;margin:20px 0 0 14px;}
+}
 /* Pour une résolution comprise entre 1024px et 1440px */
 @media (min-width:1567px){
 	div.header>div.menu{float:left;margin-left:25px;}
